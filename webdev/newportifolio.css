@@ -7,7 +7,7 @@ body{
 header{
     background-color: #333;
     color: #fff;
-    padding: 30px;
+    padding:10px;
 }
 
 header h1{
@@ -41,7 +41,7 @@ nav a{
 }
 
 main{
-    padding: 25px;
+    padding: 20px;
     margin: 0 auto;
     max-width:
 }
@@ -70,7 +70,7 @@ section li{
 
 footer{
     background-color: #333;
-    padding: 20px;
+    padding: 10px;
     color: #fff;
     text-align: center;
     position: fixed;

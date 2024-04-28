@@ -18,8 +18,7 @@ print(my_list)
 
 # Remove the last element from my_list.
 
-my_list.remove(70) # alternative function del my_list[-1]
-
+my_list.remove(70)  # alternative function del my_list[-1]
 
 # Sort my_list in ascending order.
 my_list.sort()
