@@ -3,10 +3,15 @@
 {% block title %}Add to Cart{% endblock %}
 
 {% block content %}
-<h1>Add to Cart</h1>
-<form method="post">
-    {% csrf_token %}
-    <input type="hidden" name="product_id" value="{{ product.id }}">
-    <button type="submit">Add to Cart</button>
-</form>
+<div class="product-details">
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+    <p>{{ product.description }}</p>
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+
+    <form method="POST" action="{% url 'add_to_cart' product.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Add to Cart</button>
+    </form>
+</div>
 {% endblock %}

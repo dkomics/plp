@@ -1,6 +1,7 @@
 # labridge_app/models.py
 from django.db import models # type: ignore
 from django.contrib.auth.models import User # type: ignore
+from django.conf import settings # type: ignore
 
 class Supplier(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
@@ -29,7 +30,8 @@ class Product(models.Model):
         return self.name
 
 class Order(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     completed = models.BooleanField(default=False)
 
@@ -39,7 +41,7 @@ class Order(models.Model):
 class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField()
+    quantity = models.PositiveIntegerField(default=1)
 
     def __str__(self):
         return f'{self.product.name} x {self.quantity}'

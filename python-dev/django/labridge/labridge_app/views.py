@@ -1,6 +1,6 @@
 # views.py
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404, redirect # type: ignore
+from django.contrib.auth.decorators import login_required # type: ignore
 from .models import Category, Product, Order, OrderItem
 
 def landing_page(request):
@@ -33,7 +33,10 @@ def add_to_cart(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     order, created = Order.objects.get_or_create(user=request.user, completed=False)
     order_item, created = OrderItem.objects.get_or_create(order=order, product=product)
-    order_item.quantity += 1
+    if created:
+        order_item.quantity = 1
+    else:
+        order_item.quantity += 1
     order_item.save()
     return redirect('cart_detail')
 
