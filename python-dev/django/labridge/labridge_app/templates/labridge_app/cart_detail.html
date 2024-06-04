@@ -1,0 +1,13 @@
+{% extends "labridge_app/base.html" %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+<h1>Cart</h1>
+<ul>
+{% for item in order.orderitem_set.all %}
+    <li>{{ item.product.name }} - {{ item.quantity }}</li>
+{% endfor %}
+</ul>
+<a href="{% url 'checkout' %}">Checkout</a>
+{% endblock %}

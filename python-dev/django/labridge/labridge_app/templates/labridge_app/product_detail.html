@@ -1,0 +1,12 @@
+<!-- labdridge/templates/labridge/product_detail.html -->
+{% extends "labridge_app/base.html" %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<h1>{{ product.name }}</h1>
+<p>{{ product.description }}</p>
+<p>Price: {{ product.price }}</p>
+<p>Stock: {{ product.stock }}</p>
+<a href="{% url 'add_to_cart' product.id %}">Add to cart</a>
+{% endblock %}

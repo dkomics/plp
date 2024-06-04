@@ -1,0 +1,19 @@
+<!-- labridge_app/templates/labridge_app/supply_list.html -->
+{% extends "labridge_app/base.html" %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<h1>Products</h1>
+{% for category in categories %}
+    <h2>{{ category.name }}</h2>
+    <ul>
+    {% for product in products %}
+        {% if product.category == category %}
+            <li><a href="{% url 'product_detail' product.id %}">{{ product.name }}</a> - {{ product.price }}</li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% endfor %}
+{% endblock %}
+

@@ -1,0 +1,58 @@
+/* static/labridge_app/css/base.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a img {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+div {
+    padding: 20px;
+}
+
+.landing-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff;
+    margin: 20px auto;
+    border-radius: 10px;
+    max-width: 600px;
+}
+
+.landing-buttons {
+    margin-top: 30px;
+}
+
+.landing-buttons .button {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}
+
+.landing-buttons .button:hover {
+    background-color: #0056b3;
+}

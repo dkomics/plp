@@ -1,0 +1,55 @@
+/* static/labridge_app/css/product_detail.css */
+/* styles.css */
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Container for the content */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2em;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Paragraph styles */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Price and Stock styles */
+p span {
+    font-weight: bold;
+}
+
+/* Link styles */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+a:hover {
+    background-color: #218838;
+}

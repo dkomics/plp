@@ -1,0 +1,67 @@
+<!-- labdridge_app/templates/labridge_app/landing_page.html -->
+{% extends "labridge_app/base.html" %}
+
+{% block title %}Welcome to Labridge{% endblock %}
+
+{% block content %}
+<div class="landing-page">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Labridge</h1>
+            <p>
+                At Labridge, we're more than just an information hub; we're your trusted partner in scientific innovation.
+                Whether you're equipping a cutting-edge research lab or a high school science classroom, we've got you covered.
+                Our comprehensive selection of high-quality laboratory equipment, premium reagents, essential consumables, 
+                and expert services ensures you have everything you need to achieve your scientific goals.
+            </p>
+            <p>Your one-stop shop for laboratory equipment, reagents, consumables, and services.</p>
+            <a href="{% url 'product_list' %}" class="cta-button">View Products</a>
+        </div>
+    </div>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We provide a comprehensive platform for laboratories to find essential supplies, reagents, consumables, and equipment with ease. Our goal is to enhance the efficiency of the procurement process and support scientific research by simplifying sourcing.</p>
+        <p>Join the Labridge community today and bridge the gap between your ideas and groundbreaking discoveries. Let's make science happen—together.</p>
+    </section>
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <i class="fas fa-flask"></i>
+                <h3>Supplies</h3>
+                <p>Find a wide range of laboratory supplies tailored to your needs.</p>
+                <p>
+                    <strong>Essential Consumables:</strong> Stock up on everything from lab coats to pipette tips, all designed to support your day-to-day operations.
+                </p>
+            </div>
+            <div class="card">
+                <i class="fas fa-vials"></i>
+                <h3>Reagents</h3>
+                <p>Access a variety of reagents for your experiments and research.</p>
+                <p>
+                    <strong>High-Quality Reagents:</strong> Our selection of reagents is carefully curated to meet the highest standards of quality.
+                </p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <h3>Equipment</h3>
+                <p>Discover high-quality laboratory equipment to support your work.</p>
+                <p>
+                    <strong>Top-Quality Equipment:</strong> From microscopes to centrifuges, find the latest and most reliable instruments for your experiments.
+                </p>    
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact us</h2>
+        <p>Have any questions? Feel free to reach out to us!</p>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</div>
+{% endblock %}
+

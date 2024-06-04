@@ -1,0 +1,25 @@
+<!-- labdridge_app/templates/labridge_app/base.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Labridge{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/landing.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/product_detail.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/order_history.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/cart_detail.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/checkout.css' %}">
+<body>
+    <nav>
+        <a href="{% url 'landing_page' %}">
+            <img src="{% static 'labridge_app/images/home_icon.png' %}" alt="Home">
+        </a>
+    </nav>
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
