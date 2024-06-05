@@ -15,6 +15,17 @@
 </head>
 <body>
     <nav>
+        <div class="navbar-left">
+            {% if user.is_authenticated %}
+                <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="nav-link" style="background:none; border:none; padding:0; margin:0; cursor:pointer; color: inherit;">Logout</button>
+                </form>
+            {% else %}
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+            {% endif %}
+        </div>
         <div class="navbar-center">
             <a href="{% url 'landing_page' %}">
                 <img src="{% static 'labridge_app/images/home_icon.png' %}" alt="Home">
@@ -30,6 +41,17 @@
     </div>
 
     <footer>
+        {% comment %} <p>Social Media:
+            <a href="https://x.com/dkomics">
+                <img src="{% static 'labridge_app/images/twitter.png' %}" alt="X" class="social-media">
+            </a>
+            <a href="https://www.linkedin.com/in/dkuchaka/">
+                <img src="{% static 'labridge_app/images/linkedin.png' %}" alt="LinkedIn" class="social-media">
+            </a>
+            <a href="https://github.com/dkomics">
+                <img src="{% static 'labridge_app/images/github.png' %}" alt="GitHub" class="social-media">
+            </a>
+        </p> {% endcomment %}
         <p>&copy; 2024 Davis Kuchaka</p>
     </footer>
 

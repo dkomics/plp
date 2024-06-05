@@ -8,13 +8,31 @@ from django.template.loader import render_to_string # type: ignore
 from django.utils.html import strip_tags # type: ignore
 from django.conf import settings # type: ignore
 
-from django.shortcuts import render, get_object_or_404 # type: ignore
+from django.shortcuts import render, get_object_or_404, redirect # type: ignore
 from django.core.files.storage import FileSystemStorage # type: ignore
 from io import BytesIO
 from reportlab.lib.pagesizes import letter # type: ignore
 from reportlab.pdfgen import canvas # type: ignore
 
 from .models import Category, Product, Order, OrderItem
+
+from django.contrib.auth.forms import UserCreationForm # type: ignore
+from django.contrib.auth import login as auth_login # type: ignore
+from django.contrib.auth.views import LoginView # type: ignore
+
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            auth_login(request, user)
+            return redirect('landing_page')
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
+
 
 def landing_page(request):
     """
@@ -66,8 +84,6 @@ def add_to_cart(request, product_id):
         pass
     
     return redirect('cart_detail')
-
-
 
 @login_required
 def cart_detail(request):

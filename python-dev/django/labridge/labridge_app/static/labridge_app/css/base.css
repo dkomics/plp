@@ -1,5 +1,4 @@
 /* static/labridge_app/css/base.css */
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -7,94 +6,48 @@ body {
     padding: 0;
 }
 
-nav {
-    background-color: #086ebd;
-    color: #fff;
-    padding: 5px;
-    text-align: center;
-}
-
-nav a img {
-    width: 50px;
-    height: 50px;
-    vertical-align: middle;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-}
-
-div {
-    padding: 10px;
-}
-
-.landing-container {
-    text-align: center;
-    padding: 10px;
-    background-color: #fff;
-    margin: 20px auto;
-    border-radius: 10px;
-    max-width: 10px;
-}
-
-.landing-buttons {
-    margin-top: 30px;
-}
-
-.landing-buttons .button {
-    text-decoration: none;
-    color: white;
-    background-color: #007bff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin: 5px;
-    display: inline-block;
-}
-
-.landing-buttons .button:hover {
-    background-color: #0056b3;
-}
-
-/* base.css */
-
 .navbar {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     padding: 10px;
-    background-color: #f8f9fa;
+    background-color: #333;
 }
 
 .navbar-left {
     position: absolute;
-    left: 100px;
+    left: 10px;
 }
 
-.navbar-left {
-    text-align: left;
-}
-
-.back-button {
-    background-color: #f8f9fa; /* Light grey background */
-    border: none;
-    color: #007bff; /* Bootstrap primary blue */
-    padding: 10px 10px;
+.navbar-center {
     text-align: center;
+}
+
+.nav-link {
+    color: white;
     text-decoration: none;
-    font-size: 16px;
+    margin: 0 15px;
+}
+
+/* .social-media img {
+    width: 1cm;
+    height: 1cm;
+    margin: 0 5px;
+} */
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+button.nav-link {
+    background: none;
+    border: none;
+    color: inherit;
     cursor: pointer;
-    border-radius: 4px;
-}
-
-.back-button:hover {
-    background-color: #007bff; /* Change background color on hover */
-    color: white; /* White text on hover */
-}
-
-.home-icon img {
-    display: block;
-    margin: auto;
+    font: inherit;
+    outline: inherit;
 }
