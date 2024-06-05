@@ -1,0 +1,49 @@
+/* order_detail.css */
+
+/* Container styles */
+.order-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Heading styles */
+  .order-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Order details styles */
+  .order-info {
+    margin-bottom: 20px;
+  }
+  
+  .order-info p {
+    margin: 5px 0;
+  }
+  
+  /* Order items styles */
+  .order-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-item {
+    margin-bottom: 10px;
+  }
+  
+  .order-item-name {
+    font-weight: bold;
+  }
+  
+  .order-item-price {
+    margin-left: 20px;
+  }
+  
+  /* Total amount styles */
+  .total-amount {
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  

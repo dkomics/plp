@@ -1,0 +1,11 @@
+{% extends "labridge_app/base.html" %}
+
+{% block title %}Order Summary{% endblock %}
+
+{% block content %}
+<h1>Order Summary</h1>
+<p>Order ID: {{ order.id }}</p>
+<!-- Display other order details as needed -->
+
+<a href="{% url 'download_order_summary' order.id %}">Download Order Summary (PDF)</a>
+{% endblock %}

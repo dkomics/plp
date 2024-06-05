@@ -3,10 +3,14 @@
 {% block title %}Order History{% endblock %}
 
 {% block content %}
-<h1>Order History</h1>
-<ul>
-{% for order in orders %}
-    <li>Order {{ order.id }} - {{ order.created_at }}</li>
-{% endfor %}
-</ul>
+  <h1>Order History</h1>
+  <ul>
+    {% for order in orders %}
+      <li>
+        <a href="{% url 'order_detail' order.id %}">Order {{ order.id }}</a> - 
+        {{ order.created_at }} - 
+        Total: ${{ order.get_total }}
+      </li>
+    {% endfor %}
+  </ul>
 {% endblock %}

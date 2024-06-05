@@ -3,9 +3,23 @@
 {% block title %}Checkout{% endblock %}
 
 {% block content %}
-<h1>Checkout</h1>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Complete Order</button>
-</form>
+  <h1>Checkout</h1>
+  <div class="checkout-info">
+    <h2>Order Summary</h2>
+    <ul>
+      {% for item in order.orderitem_set.all %}
+        <li>{{ item.product.name }} - {{ item.quantity }} x {{ item.product.price }}</li>
+      {% endfor %}
+    </ul>
+    <p>Total: {{ order.get_total }}</p>
+  </div>
+  <div class="checkout-actions">
+    <h2>Payment Information</h2>
+    <!-- Add payment form fields here (e.g., credit card information) -->
+    <form method="post">
+      {% csrf_token %}
+      <!-- Add payment form fields here -->
+      <button type="submit">Complete Order</button>
+    </form>
+  </div>
 {% endblock %}

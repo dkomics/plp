@@ -1,0 +1,31 @@
+{% extends "labridge_app/base.html" %}
+{% load static %}
+
+{% block title %}Order Details{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'labridge_app/css/order_detail.css' %}">
+
+  <div class="order-container">
+    <h1 class="order-title">Order Details</h1>
+    <div class="order-info">
+      <p>Order ID: {{ order.id }}</p>
+      <p>Order Date: {{ order.created_at }}</p>
+    </div>
+    
+    <h2>Order Items:</h2>
+    <ul class="order-items">
+      {% for item in order.orderitem_set.all %}
+        <li class="order-item">
+          <span class="order-item-name">{{ item.product.name }}</span> - 
+          Quantity: {{ item.quantity }} - 
+          <span class="order-item-price">Price: ${{ item.product.price }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+    
+    <p class="total-amount">Total: ${{ order.get_total }}</p>
+  </div>
+{% endblock %}
+
+

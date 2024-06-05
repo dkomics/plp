@@ -1,0 +1,55 @@
+/* product_list.css */
+
+/* Style for the main heading */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Style for category headings */
+h2 {
+    font-size: 2em;
+    color: #555;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+/* Style for the product list */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px auto;
+    max-width: 800px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for each product item */
+ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+/* Style for product links */
+ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
+
+/* Style for product prices */
+ul li span.price {
+    color: #999;
+    float: right;
+}
